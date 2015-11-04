@@ -10,3 +10,5 @@ A Salt State for installing the Elasticsearch / Logstash / Kibana stack.
 This State provide ELK Stack for using REDIS as a Brocker.
 
 You just have to ship your logs to REDIS using Beaver (for example).
+
+https://github.com/josegonzalez/python-beaver
