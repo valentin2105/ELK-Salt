@@ -1,5 +1,5 @@
 # ELK-Salt
-An Salt State for installing the Elasticsearch / Logstash / Kibana stack.
+A Salt State for installing the Elasticsearch / Logstash / Kibana stack.
 
 ```Work on Debian Jessie```, and maybe on other distros
 
@@ -8,4 +8,5 @@ An Salt State for installing the Elasticsearch / Logstash / Kibana stack.
 ```Kibana 4.02```
 
 This State provide ELK Stack for using REDIS as a Brocker.
+
 You just have to ship your logs to REDIS using Beaver (for example).
