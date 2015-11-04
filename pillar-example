@@ -1,0 +1,12 @@
+elasticsearch:
+  port: 9200
+  bind: 127.0.0.1
+  version: 1.4
+kibana:
+  port: 5601
+  bind: 0.0.0.0
+  version: kibana-4.0.2-linux-x64
+  hash: sha1=c925f75cd5799bfd892c7ea9c5936be10a20b119
+logstash:
+  redis-from: ip-redis
+  version: 1.5
