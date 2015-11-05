@@ -14,3 +14,7 @@ This State provide ELK Stack for using REDIS as a Brocker.
 You just have to ship your logs to REDIS using Beaver (for example).
 
 https://github.com/josegonzalez/python-beaver
+
+You can install Redis-Server using the redis formulas :
+
+https://github.com/saltstack-formulas/redis-formula
