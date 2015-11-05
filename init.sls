@@ -35,13 +35,11 @@ logstash:
     - installed
     - requiere: logstash-ppa
   service.running:
-    - enable: True
-    - reload: True
-    - init_delay: 10
     - watch:
       - pkg: logstash
+      - file: /etc/logstash/conf.d/logstash.conf
 
-/etc/logstash/logstash.conf:
+/etc/logstash/conf.d/logstash.conf:
   file:
     - managed
     - source: salt://elk/logstash.conf
@@ -61,11 +59,9 @@ kibana-base:
 
 kibana4:
   service.running:
-    - enable: True
-    - reload: True
-    - init_delay: 10
     - watch:
       - archive: kibana-base
+      - file: /opt/{{ pillar['kibana']['version'] }}/config/kibana.yml
 
 /etc/init.d/kibana4:
   file:
@@ -81,6 +77,15 @@ kibana4:
     - managed
     - template: jinja
     - source: salt://elk/kibana4.service
+    - user: root
+    - group: root
+    - mode: 644
+
+/opt/{{ pillar['kibana']['version'] }}/config/kibana.yml:
+  file:
+    - managed
+    - template: jinja
+    - source: salt://elk/kibana.yml
     - user: root
     - group: root
     - mode: 644
